@@ -91,8 +91,6 @@ Production-AI-SaaS-Backend/
 └── README.md
 ```
 
-*The structure above describes the main components; filenames and folders may vary slightly in your local repository.*
-
 ## ⚙️ Getting Started
 
 ### Prerequisites
@@ -146,8 +144,6 @@ SECRET_KEY=replace_with_a_strong_random_secret
 REDIS_URL=your_redis_connection_url
 DATABASE_URL=your_database_connection_url
 ```
-
-**Important:** These are example variable names. Confirm that they match your actual application settings before running the project. Use a secure secret, configure the database according to your setup, and never commit `.env` or real credentials to GitHub.
 
 ### 5. Run the API
 
