@@ -1,0 +1,31 @@
+
+services:
+  api:
+    build: .
+    container_name: production-ai-api
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    command:
+      - uvicorn
+      - app.main:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+    restart: unless-stopped
+
+  worker:
+    build: .
+    container_name: production-ai-worker
+    env_file:
+      - .env
+    command:
+      - celery
+      - -A
+      - app.celery_app:celery_app
+      - worker
+      - --loglevel=info
+      - --pool=solo
+    restart: unless-stopped
